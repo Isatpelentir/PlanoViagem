@@ -8,10 +8,10 @@ const Inicio = ({ navigation }) => {
       <Image
         source={{ uri: 'https://placehold.co/300x200/png?text=Travel+Planner' }}
         style={styles.logo}
-        alt="Logo do Plano de Viagem com ilustração de avião e morros"
+        alt="Logo do Plano de Viagem"
       />
-      <Text style={styles.title}>Bem-vindo ao Planos de Viagens!</Text>
-      <Text style={styles.subtitle}>Planejamento financeiro para suas viagens!</Text>
+      <Text style={styles.titulo}>Bem-vindo ao Planos de Viagens!</Text>
+      <Text style={styles.titulo2}>Planejamento financeiro para suas viagens!</Text>
 
 
       <TouchableOpacity 
@@ -45,14 +45,14 @@ const styles = StyleSheet.create({
     height: 200,
     marginBottom: 30
   },
-  title: {
+  titulo: {
     fontSize: 28,
     fontWeight: 'bold',
     marginBottom: 10,
     color: '#2c3e50',
     textAlign: 'center'
   },
-  subtitle: {
+  titulo2: {
     fontSize: 16,
     color: '#7f8c8d',
     marginBottom: 40,
