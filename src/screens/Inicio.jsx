@@ -16,14 +16,14 @@ const Inicio = ({ navigation }) => {
 
       <TouchableOpacity 
         style={styles.button}
-        onPress={() => navigation.navigate('Planejamento')}
+        onPress={() => navigation.navigate('PlanoViagem')}
       >
         <Text style={styles.buttonText}>Começar</Text>
       </TouchableOpacity>
 
 
       <TouchableOpacity 
-        onPress={() => navigation.navigate('Histórico')}
+        onPress={() => navigation.navigate('Historico')}
       >
         <Text style={styles.link}>Ver histórico</Text>
       </TouchableOpacity>
