@@ -6,7 +6,7 @@ const Inicio = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Image
-        source={{ uri: 'https://placehold.co/300x200/png?text=Travel+Planner' }}
+        source={require('../../assets/capa-plano-de-viagem-como-planejar-uma-viagem-perfeita-dicas.webp')}
         style={styles.logo}
         alt="Logo do Plano de Viagem"
       />

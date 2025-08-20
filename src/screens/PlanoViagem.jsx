@@ -3,10 +3,6 @@ import { View, ScrollView, Text, StyleSheet, TouchableOpacity } from 'react-nati
 import CalculadoraForm from '../components/CalculadoraForm';
 import Resultados from '../components/Resultados';
 
-
-
-
-
 const PlanoViagemScreen = ({ navigation }) => {
   const [resultados, setResultados] = useState(null);
 

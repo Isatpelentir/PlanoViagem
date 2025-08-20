@@ -5,6 +5,21 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Inicio from './screens/Inicio.jsx';
 import PlanoViagem from './screens/PlanoViagem.jsx';
 import Historico from './screens/Historico.jsx';
+import GraficoScreen from './src/screens/GraficoScreen';
+
+
+<Stack.Navigator initialRouteName="Calculadora">
+  <Stack.Screen 
+    name="Calculadora" 
+    component={CalculadoraForm} 
+    options={{ title: 'Planejamento da Viagem' }}
+  />
+  <Stack.Screen 
+  name="Grafico" 
+  component={GraficoScreen} 
+  options={{ title: 'Gráfico da Evolução' }}
+/>
+</Stack.Navigator>
 
 
 const Stack = createStackNavigator();

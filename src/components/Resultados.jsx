@@ -4,9 +4,9 @@ import { View, Text, StyleSheet, Button } from 'react-native';
 const Resultados = ({ resultados, onSeeHistory }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.resultText}>Total de Meses: {resultados.meses}</Text>
-      <Text style={styles.resultText}>Valor Mensal Necessário: R$ {resultados.mensalidadeNecessaria}</Text>
-      <Text style={styles.resultText}>Valor Acumulado: R$ {resultados.valorAcumulado}</Text>
+      <Text style={styles.resultText}>Total de Meses Até a Viagem: {resultados.meses}</Text>
+      <Text style={styles.resultText}>Valor Mensal Necessário Economizar: R$ {resultados.mensalidadeNecessaria}</Text>
+      <Text style={styles.resultText}>Valor Acumulado Após Economizar: R$ {resultados.valorAcumulado}</Text>
       <Button title="Ver Histórico" onPress={onSeeHistory} />
     </View>
   );
