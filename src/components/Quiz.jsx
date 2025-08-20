@@ -12,7 +12,7 @@ const Quiz = () => {
             options: ["H2O", "CO2", "O2", "NaCl"],
             answer: "H2O"
         },
-        // Adicione mais perguntas conforme necessário
+        
     ];
 
     const [currentQuestion, setCurrentQuestion] = useState(0);

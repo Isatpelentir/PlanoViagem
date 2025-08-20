@@ -3,7 +3,7 @@ import { View, TextInput, Button, Text, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const CalculadoraForm = () => {
-  const navigation = useNavigation(); // ✅ Pega o navigation corretamente
+  const navigation = useNavigation();
 
   const [amountHos, setAmountHospedagem] = useState('');
   const [amountAli, setAmountAlimentacao] = useState('');
@@ -13,12 +13,12 @@ const CalculadoraForm = () => {
   const [dias, setDias] = useState('');
   const [resultado, setResultado] = useState(null);
 
-  // Função para formatar e validar a data no formato brasileiro (DD/MM/YYYY)
+  
   const formatDateToBrazilian = (dateStr) => {
     const parts = dateStr.split('/');
     if (parts.length === 3) {
       const day = parts[0];
-      const month = parts[1] - 1; // O mês no JavaScript é 0-indexado
+      const month = parts[1] - 1; 
       const year = parts[2];
 
       const formattedDate = new Date(year, month, day);
@@ -29,7 +29,7 @@ const CalculadoraForm = () => {
     return null;
   };
 
-  // Função para calcular as informações
+
   const handleSubmit = () => {
     const amountHospedagem = parseFloat(amountHos);
     const amountAlimentacao = parseFloat(amountAli);

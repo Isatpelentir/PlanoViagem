@@ -5,7 +5,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Inicio from './screens/Inicio.jsx';
 import PlanoViagem from './screens/PlanoViagem.jsx';
 import Historico from './screens/Historico.jsx';
-import GraficoScreen from './src/screens/GraficoScreen';
+import GraficoScreen from '../src/screens/GraficoScreen';
+
 
 
 <Stack.Navigator initialRouteName="Calculadora">
@@ -34,6 +35,7 @@ export default function App() {
           component={Inicio}
           options={{ headerShown: false }} 
         />
+         <Stack.Screen name="Grafico" component={GraficoScreen} />
         <Stack.Screen name="PlanoViagem" component={PlanoViagem} />
         <Stack.Screen name="Histórico" component={Historico} />
       </Stack.Navigator>
