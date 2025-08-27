@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
 
-
 const Inicio = ({ navigation }) => {
   return (
     <View style={styles.container}>
@@ -13,14 +12,12 @@ const Inicio = ({ navigation }) => {
       <Text style={styles.titulo}>Bem-vindo ao Planos de Viagens!</Text>
       <Text style={styles.titulo2}>Planejamento financeiro para suas viagens!</Text>
 
-
       <TouchableOpacity 
         style={styles.button}
         onPress={() => navigation.navigate('PlanoViagem')}
       >
         <Text style={styles.buttonText}>Começar</Text>
       </TouchableOpacity>
-
 
       <TouchableOpacity 
         onPress={() => navigation.navigate('Historico')}
@@ -30,7 +27,6 @@ const Inicio = ({ navigation }) => {
     </View>
   );
 };
-
 
 const styles = StyleSheet.create({
   container: {
@@ -77,4 +73,5 @@ const styles = StyleSheet.create({
     marginTop: 20
   }
 });
+
 export default Inicio;

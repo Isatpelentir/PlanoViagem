@@ -6,9 +6,7 @@ import Resultados from '../components/Resultados';
 const PlanoViagemScreen = ({ navigation }) => {
   const [resultados, setResultados] = useState(null);
 
-
   const handleCalculate = (data) => {
-    // Simulação de cálculo - implemente sua lógica real aqui
     setResultados({
       meses: data.meses,
       requiredMonthly: 500,
@@ -17,17 +15,8 @@ const PlanoViagemScreen = ({ navigation }) => {
     });
   };
 
-
   return (
     <ScrollView style={styles.container}>
-      <TouchableOpacity 
-        style={styles.backButton}
-        onPress={() => navigation.goBack()}
-      >
-        <Text style={styles.backText}>← Voltar</Text>
-      </TouchableOpacity>
-
-
       <Text style={styles.title}>Planejamento de Viagem</Text>
       
       <CalculadoraForm onSubmit={handleCalculate} />
@@ -42,30 +31,36 @@ const PlanoViagemScreen = ({ navigation }) => {
   );
 };
 
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
     backgroundColor: '#fff'
   },
-  backButton: {
-    alignSelf: 'flex-start',
-    marginBottom: 20
-  },
-  backText: {
-    color: '#3498db',
-    fontSize: 16
-  },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
     color: '#2c3e50'
+  },
+  subtitle: {
+    fontSize: 18,
+    fontWeight: '600',
+    marginTop: 30,
+    marginBottom: 12,
+  },
+  button: {
+    backgroundColor: '#3498db',
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+    borderRadius: 8,
+    marginBottom: 12,
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 16,
+    textAlign: 'center',
   }
 });
 
-
 export default PlanoViagemScreen;
-
-

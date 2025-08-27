@@ -13,7 +13,6 @@ const CalculadoraForm = () => {
   const [dias, setDias] = useState('');
   const [resultado, setResultado] = useState(null);
 
-  
   const formatDateToBrazilian = (dateStr) => {
     const parts = dateStr.split('/');
     if (parts.length === 3) {
@@ -28,7 +27,6 @@ const CalculadoraForm = () => {
     }
     return null;
   };
-
 
   const handleSubmit = () => {
     const amountHospedagem = parseFloat(amountHos);
@@ -74,9 +72,8 @@ const CalculadoraForm = () => {
     }
   };
 
-  // Função para navegar para o gráfico
-  const handleNavigateToGraph = () => {
-    navigation.navigate('Grafico', {
+  const handleNavigateToRoteiro = () => {
+    navigation.navigate('Roteiro', {
       totalGastos: resultado?.totalGastos,
       difeDays: resultado?.difeDays,
       economiaDiaria: resultado?.economiaDiaria,
@@ -86,49 +83,61 @@ const CalculadoraForm = () => {
 
   return (
     <View style={styles.container}>
+      <Text style={styles.label}>Data da viagem</Text>
       <TextInput
         style={styles.input}
-        placeholder="Data da viagem (DD/MM/YYYY)"
+        placeholder="DD/MM/YYYY"
         keyboardType="numeric"
         onChangeText={setData}
         value={data}
         maxLength={10}
       />
+
+      <Text style={styles.label}>Gastos com hospedagem (diário)</Text>
       <TextInput
         style={styles.input}
-        placeholder="Gastos com hospedagem"
+        placeholder="Ex: 1000"
         keyboardType="numeric"
         onChangeText={setAmountHospedagem}
         value={amountHos}
       />
+
+      <Text style={styles.label}>Gastos com alimentação (diário)</Text>
       <TextInput
         style={styles.input}
-        placeholder="Gastos com alimentação"
+        placeholder="Ex: 800"
         keyboardType="numeric"
         onChangeText={setAmountAlimentacao}
         value={amountAli}
       />
+
+      <Text style={styles.label}>Gastos com transporte (diário)</Text>
       <TextInput
         style={styles.input}
-        placeholder="Gastos com transporte"
+        placeholder="Ex: 500"
         keyboardType="numeric"
         onChangeText={setAmountTransporte}
         value={amountTr}
       />
+
+      <Text style={styles.label}>Gastos com passeios</Text>
       <TextInput
         style={styles.input}
-        placeholder="Gastos com passeios"
+        placeholder="Ex: 600"
         keyboardType="numeric"
         onChangeText={setAmountPasseios}
         value={amountPass}
       />
+
+      <Text style={styles.label}>Tempo de viagem (dias)</Text>
       <TextInput
         style={styles.input}
-        placeholder="Tempo de viagem (dias)"
+        placeholder="Ex: 7"
         keyboardType="numeric"
         onChangeText={setDias}
         value={dias}
       />
+
       <Button title="Calcular" onPress={handleSubmit} />
 
       {resultado && (
@@ -140,8 +149,7 @@ const CalculadoraForm = () => {
             Faltam {resultado.difeDays} dias para a viagem
           </Text>
           <Text style={styles.resultText}>
-            Você precisa economizar R${resultado.economiaDiaria.toFixed(2)} por
-            dia
+            Você precisa economizar R${resultado.economiaDiaria.toFixed(2)} por dia
           </Text>
           <Text style={styles.resultText}>
             Gasto total durante a viagem: R${resultado.gastoTotalViagem.toFixed(2)}
@@ -151,8 +159,8 @@ const CalculadoraForm = () => {
 
       {resultado && (
         <Button
-          title="Ver Gráfico da Evolução"
-          onPress={handleNavigateToGraph}
+          title="Ver Sugestões de Roteiro"
+          onPress={handleNavigateToRoteiro}
         />
       )}
     </View>
@@ -162,6 +170,13 @@ const CalculadoraForm = () => {
 const styles = StyleSheet.create({
   container: {
     marginBottom: 20,
+  },
+  label: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: '#333',
+    marginBottom: 4,
+    marginTop: 10,
   },
   input: {
     borderWidth: 1,
