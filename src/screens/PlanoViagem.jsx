@@ -20,13 +20,6 @@ const PlanoViagemScreen = ({ navigation }) => {
       <Text style={styles.title}>Planejamento de Viagem</Text>
       
       <CalculadoraForm onSubmit={handleCalculate} />
-      
-      {resultados && (
-        <Resultados
-          resultados={resultados}
-          onSeeHistory={() => navigation.navigate('Historico')}
-        />
-      )}
     </ScrollView>
   );
 };

@@ -59,7 +59,7 @@ const CalculadoraForm = () => {
 
       const gastoTotalViagem =
         diasViagem *
-        (amountAlimentacao + amountTransporte + amountPasseios);
+        (amountAlimentacao + amountHospedagem + amountPasseios);
 
       setResultado({
         totalGastos,
@@ -111,7 +111,7 @@ const CalculadoraForm = () => {
         value={amountAli}
       />
 
-      <Text style={styles.label}>Gastos com transporte (diário)</Text>
+      <Text style={styles.label}>Gastos com transporte</Text>
       <TextInput
         style={styles.input}
         placeholder="Ex: 500"
@@ -120,7 +120,7 @@ const CalculadoraForm = () => {
         value={amountTr}
       />
 
-      <Text style={styles.label}>Gastos com passeios</Text>
+      <Text style={styles.label}>Gastos com passeios (diário)</Text>
       <TextInput
         style={styles.input}
         placeholder="Ex: 600"

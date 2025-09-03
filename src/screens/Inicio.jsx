@@ -18,12 +18,6 @@ const Inicio = ({ navigation }) => {
       >
         <Text style={styles.buttonText}>Começar</Text>
       </TouchableOpacity>
-
-      <TouchableOpacity 
-        onPress={() => navigation.navigate('Historico')}
-      >
-        <Text style={styles.link}>Ver histórico</Text>
-      </TouchableOpacity>
     </View>
   );
 };

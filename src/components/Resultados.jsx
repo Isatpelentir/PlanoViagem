@@ -1,13 +1,12 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
-const Resultados = ({ resultados, onSeeHistory }) => {
+const Resultados = ({ resultados}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.resultText}>Total de Meses Até a Viagem: {resultados.meses}</Text>
       <Text style={styles.resultText}>Valor Mensal Necessário Economizar: R$ {resultados.mensalidadeNecessaria}</Text>
       <Text style={styles.resultText}>Valor Acumulado Após Economizar: R$ {resultados.valorAcumulado}</Text>
-      <Button title="Ver Histórico" onPress={onSeeHistory} />
     </View>
   );
 };

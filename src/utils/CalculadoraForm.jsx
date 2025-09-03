@@ -7,16 +7,15 @@ const CalculadoraForm = ({ onCalculate }) => {
   const [gastosTransporte, setGastosTransporte] = useState(0);
   const [gastosPasseios, setGastosPasseios] = useState(0);
   const [tempoViagem, setTempoViagem] = useState(1);
-  const [rentabilidade, setRentabilidade] = useState(0.007); // 0.7%
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const totalGastos = Number(gastosHospedagem) + Number(gastosAlimentacao) + 
                         Number(gastosTransporte) + Number(gastosPasseios);
     const prazoTotal = calcularPrazo(dataViagem);
-    const valorMensalIdeal = calcularMensal(totalGastos, prazoTotal, rentabilidade);
-    const valorMensalMenor = 300; // Valor menor fixo
-    const acumuladoMenor = calcularAcumulado(valorMensalMenor, prazoTotal, rentabilidade);
+    const valorMensalIdeal = calcularMensal(totalGastos, prazoTotal);
+    const valorMensalMenor = 300; 
+    const acumuladoMenor = calcularAcumulado(valorMensalMenor, prazoTotal);
     
     onCalculate({
       prazoTotal,
@@ -28,21 +27,8 @@ const CalculadoraForm = ({ onCalculate }) => {
   const calcularPrazo = (data) => {
     const dataViagem = new Date(data);
     const hoje = new Date();
-    const meses = Math.ceil((dataViagem - hoje) / (1000 * 60 * 60 * 24 * 30)); // Aproximando para meses
+    const meses = Math.ceil((dataViagem - hoje) / (1000 * 60 * 60 * 24 * 30));
     return meses > 0 ? meses : 0;
-  };
-
-  const calcularMensal = (totalGastos, prazo, rentabilidade) => {
-    const montante = totalGastos * Math.pow(1 + rentabilidade, prazo);
-    return montante / ((Math.pow(1 + rentabilidade, prazo) - 1) / rentabilidade);
-  };
-
-  const calcularAcumulado = (mensal, prazo, rentabilidade) => {
-    let total = 0;
-    for (let i = 0; i < prazo; i++) {
-      total = total * (1 + rentabilidade) + mensal;
-    }
-    return total;
   };
 
   return (
